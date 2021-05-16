@@ -1,0 +1,24 @@
+<div class="container">
+
+    <table class="table table-striped mt-4">
+        <thead>
+          <tr>
+            <th style="text-align: center;" scope="col" colspan="2">Amount Donors By Blood Type</th>
+          </tr>
+        </thead>
+        <thead>
+          <tr>
+            <th scope="col">Blood Type</th>
+            <th scope="col">Amount Donors</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor= "let r of amountDonorsByBloodTypeList">
+            <td>{{r.bloodType}}</td>
+            <td>{{r.amountDonors}}</td>
+          </tr>
+        </tbody>
+      </table>
+      
+</div>
+
