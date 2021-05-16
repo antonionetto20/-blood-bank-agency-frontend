@@ -9,6 +9,7 @@ import { DonorService } from '../donor.service';
 export class DonorsPerStateComponent implements OnInit {
 
   donorsPerState: any;
+  noRecords = false;
 
   constructor(private donorService: DonorService) { }
 
@@ -20,6 +21,8 @@ export class DonorsPerStateComponent implements OnInit {
     this.donorService.donorsPerState().subscribe(response => {
       if(response){
         this.donorsPerState = response; 
+      }else{
+        this.noRecords = true;
       }
     });
   }

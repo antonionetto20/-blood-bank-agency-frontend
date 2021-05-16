@@ -9,6 +9,7 @@ import { DonorService } from '../donor.service';
 export class AverageAgeByBloodTypeComponent implements OnInit {
 
   averageAgeByBloodTypeList: any;
+  noRecords = false;
 
   constructor(private donorService: DonorService) { }
 
@@ -20,6 +21,8 @@ export class AverageAgeByBloodTypeComponent implements OnInit {
     this.donorService.averageAgeByBloodType().subscribe(response => {
       if(response){
         this.averageAgeByBloodTypeList = response; 
+      }else{
+        this.noRecords = true;
       }
     });
   }

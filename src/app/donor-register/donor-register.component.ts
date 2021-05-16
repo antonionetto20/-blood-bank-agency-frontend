@@ -14,6 +14,8 @@ export class DonorRegisterComponent implements OnInit {
   currentInput = "";
   save = false;
   notSave = false;
+  noRecords = false;
+  
   ngOnInit(): void {
   }
 
@@ -26,6 +28,9 @@ export class DonorRegisterComponent implements OnInit {
   }
 
   submitDonors(){
+    if(this.currentInput == ""){
+      this.noRecords = true;
+    }
     this.donorService.registerDonor(this.donors).subscribe(
       resultado => {
         console.log(resultado);
@@ -35,7 +40,9 @@ export class DonorRegisterComponent implements OnInit {
         if(erro.status == 400) {
           console.log(erro);
         }
-        this.notSave = true
+        if(this.currentInput != ""){
+          this.notSave = true
+        }
       }
     );
   }

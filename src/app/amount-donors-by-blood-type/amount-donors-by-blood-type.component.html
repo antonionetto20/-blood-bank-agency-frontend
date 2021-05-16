@@ -1,6 +1,6 @@
 <div class="container">
 
-    <table class="table table-striped mt-4">
+    <table class="table table-striped mt-4"  *ngIf="!noRecords">
         <thead>
           <tr>
             <th style="text-align: center;" scope="col" colspan="2">Amount Donors By Blood Type</th>
@@ -19,6 +19,11 @@
           </tr>
         </tbody>
       </table>
+
+      <div class="alert alert-warning alert-dismissible mt-4" *ngIf="noRecords" data-auto-dismiss="3000" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <strong>Oops!</strong>There are no records in the database!
+      </div>
       
 </div>
 

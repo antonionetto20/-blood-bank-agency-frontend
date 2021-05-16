@@ -9,6 +9,7 @@ import { DonorService } from '../donor.service';
 export class AmountDonorsByBloodTypeComponent implements OnInit {
 
   amountDonorsByBloodTypeList: any;
+  noRecords = false;
 
   constructor(private donorService: DonorService) { }
 
@@ -20,6 +21,8 @@ export class AmountDonorsByBloodTypeComponent implements OnInit {
     this.donorService.amountDonorsByBloodType().subscribe(response => {
       if(response){
         this.amountDonorsByBloodTypeList = response; 
+      }else{
+        this.noRecords = true;
       }
     });
   }

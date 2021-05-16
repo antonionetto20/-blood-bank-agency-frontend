@@ -9,6 +9,7 @@ import { DonorService } from '../donor.service';
 export class AverageBmiByAgeComponent implements OnInit {
 
   bmiAveragesByAgeRange: any;
+  noRecords = false;
 
   constructor(private donorService: DonorService) { }
 
@@ -21,6 +22,8 @@ export class AverageBmiByAgeComponent implements OnInit {
       
       if(response){
         this.bmiAveragesByAgeRange = response; 
+      }else{
+        this.noRecords = true;
       }
     });
   }

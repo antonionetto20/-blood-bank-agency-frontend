@@ -11,6 +11,7 @@ export class PercentageObesityByGenderComponent implements OnInit {
   percentageObesityByGender: any;
   femalePercentage = "";
   malePercentage = "";
+  noRecords = false;
 
   constructor(private donorService: DonorService) { }
 
@@ -26,6 +27,8 @@ export class PercentageObesityByGenderComponent implements OnInit {
         this.percentageObesityByGender = response; 
         this.femalePercentage = this.percentageObesityByGender[0].femalePercentage;
         this.malePercentage = this.percentageObesityByGender[0].malePercentage;
+      }else{
+        this.noRecords = true;
       }
     });
   }

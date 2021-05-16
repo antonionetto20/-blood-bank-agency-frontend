@@ -1,6 +1,6 @@
 <div class="container mt-4">
-    <h1>Percentage Obesity By Gender</h1>
-    <div class="form-row mt-4">
+    <h1 *ngIf="!noRecords">Percentage Obesity By Gender</h1>
+    <div class="form-row mt-4" *ngIf="!noRecords">
 
         <div class="card col" style="width: 18rem;" >
             <img src="../../assets/img/Female-icon.png" class="card-img-top" alt="...">
@@ -17,4 +17,9 @@
         </div>
 
     </div>
+
+    <div class="alert alert-warning alert-dismissible mt-4" *ngIf="noRecords" data-auto-dismiss="3000" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <strong>Oops!</strong>There are no records in the database!
+      </div>
 </div>

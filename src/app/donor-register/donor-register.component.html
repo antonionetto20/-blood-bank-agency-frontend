@@ -21,6 +21,11 @@
         <strong>Oops!</strong>It was not possible to register donors!
       </div>
 
+      <div class="alert alert-warning alert-dismissible mt-4" *ngIf="noRecords" data-auto-dismiss="3000" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <strong>Oops!</strong>You need to enter the Json file for registration!
+      </div>
+
      
 </div>
 
