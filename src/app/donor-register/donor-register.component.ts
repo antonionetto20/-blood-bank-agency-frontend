@@ -36,10 +36,8 @@ export class DonorRegisterComponent implements OnInit {
         console.log(resultado);
         this.save = true;
       },
-      erro => {
-        if(erro.status == 400) {
-          console.log(erro);
-        }
+      () => {
+       
         if(this.currentInput != ""){
           this.notSave = true
         }
